@@ -1,0 +1,32 @@
+﻿@model Flowers_API.Models.Flowers
+@{
+    ViewData["Title"] = "Add Flowers";
+    
+}
+<form asp-controller="Flowers" method="post">
+    <div>
+        <label asp-for="FlowerId">FlowerID</label>
+        <input asp-for="FlowerId" />
+    </div>
+    <div>
+        <label asp-for="FlowerName">Flower Name</label>
+        <input asp-for="FlowerName" />
+    </div>
+    <div>
+        <label asp-for="FlowerColor"></label>
+        <input asp-for="FlowerColor" />
+    </div>
+    <div>
+        <label asp-for="FlowerSeason"></label>
+        <input asp-for="FlowerSeason" />
+    </div>
+    <div>
+        <label asp-for="FlowerArea"></label>
+        <input asp-for="FlowerArea" />
+    </div>
+
+    <div>
+        <button type="submit">Add Flowers</button>
+        <a href="/Flowers/Index"></a>
+    </div>
+</form>
