@@ -7,22 +7,27 @@
     <div>
         <label asp-for="FlowerId">FlowerID</label>
         <input asp-for="FlowerId" />
+ 
     </div>
     <div>
         <label asp-for="FlowerName">Flower Name</label>
         <input asp-for="FlowerName" />
+        <span asp-validation-for="FlowerName" class="text-danger"></span>
     </div>
     <div>
         <label asp-for="FlowerColor"></label>
         <input asp-for="FlowerColor" />
+        <span asp-validation-for="FlowerColor" class="text-danger"></span>
     </div>
     <div>
         <label asp-for="FlowerSeason"></label>
         <input asp-for="FlowerSeason" />
+        <span asp-validation-for="FlowerSeason" class="text-danger"></span>
     </div>
     <div>
         <label asp-for="FlowerArea"></label>
         <input asp-for="FlowerArea" />
+        <span asp-validation-for="FlowerArea" class="text-danger"></span>
     </div>
 
     <div>
@@ -30,3 +35,6 @@
         <a href="/Flowers/Index"></a>
     </div>
 </form>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
