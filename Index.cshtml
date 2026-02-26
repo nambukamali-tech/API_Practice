@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Flowers_API.Models.Flowers>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<html>
+    <body>
+    <h1>Flowers CRUD Operations</h1>
+
+    <div>
+        <a asp-action="AddFlowers" >Add Flowers</a>
+    </div>
+
+
+    <table border="3">
+        <tr>
+            <th>Flower ID</th>
+            <th>Flower Name</th>
+            <th>Flower Color</th>
+            <th>Flower Season</th>
+            <th>Flower Area</th>
+        </tr>
+        @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.FlowerId</td>
+            <td>@item.FlowerName</td>
+            <td>@item.FlowerColor</td>
+            <td>@item.FlowerSeason</td>
+            <td>@item.FlowerArea</td>
+            <td>
+                <a asp-action="EditFlowers" asp-route-id="@item.FlowerId">Edit Flowers</a>
+                <a asp-action="DeleteFlowers" asp-route-id="@item.FlowerId">Delete Flowers</a>
+            </td>
+
+                
+        </tr>
+  
+    }
+</table>
+</body>
+</html>
