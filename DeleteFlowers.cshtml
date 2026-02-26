@@ -1,0 +1,9 @@
+﻿@model Flowers_API.Models.Flowers
+@{
+    ViewData["Title"] = "Delete flowers";
+}
+
+<form asp-action="DeleteFlowers" asp-controller="Flowers" method="post">
+   <input type="hidden" asp-for="FlowerId" />
+   <button type="submit">Delete</button>
+</form>
