@@ -1,0 +1,40 @@
+﻿@model Zoo_API.Models.Zoo
+@{
+    ViewData["Title"] = "Add Animals Page";
+}
+
+<form asp-controller="Zoo" method="post">
+    <div>
+        <label asp-for="AnimalId"></label>
+        <input asp-for="AnimalId" />
+        <span asp-validation-for="AnimalId" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="AnimalName"></label>
+        <input asp-for="AnimalName" />
+        <span asp-validation-for="AnimalName" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="CountryFrom"></label>
+        <input asp-for="CountryFrom" />
+        <span asp-validation-for="CountryFrom" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="AnimalAge"></label>
+        <input asp-for="AnimalAge" />
+        <span asp-validation-for="AnimalAge" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="LifeTime"></label>
+        <input asp-for="LifeTime" />
+        <span asp-validation-for="LifeTime" class="text-danger"></span>
+    </div>
+
+    <div>
+        <button type="submit">Add Animals</button>
+        <a href="/Zoo/AddAnimals"></a>
+    </div>
+</form>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
