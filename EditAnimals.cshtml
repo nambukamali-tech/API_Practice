@@ -1,0 +1,34 @@
+﻿@model Zoo_API.Models.Zoo
+@{
+    ViewData["Title"] = "Edit Animals";
+}
+<form asp-controller="Zoo" method="post" asp-action="EditAnimals">
+    <div>
+        <label asp-for="AnimalId"></label>
+        <input asp-for="AnimalId" type="hidden"/>
+    </div>
+
+    <div>
+        <label asp-for="AnimalName"></label>
+        <input asp-for="AnimalName" />
+    </div>
+
+    <div>
+        <label asp-for="CountryFrom"></label>
+        <input asp-for="CountryFrom" />
+    </div>
+
+        <div>
+            <label asp-for="AnimalAge"></label>
+            <input asp-for="AnimalAge" />
+        </div>
+        <div>
+            <label asp-for="LifeTime"></label>
+            <input asp-for="LifeTime" />
+        </div>
+
+        <div>
+            <button type="submit">Edit Animals</button>
+            <a href="Zoo/EditAnimals"></a>
+        </div>
+</form>
