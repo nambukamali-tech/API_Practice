@@ -1,0 +1,8 @@
+﻿@model Zoo_API.Models.Zoo
+@{
+    ViewData["Title"] = "Delete Animals";
+}
+<form asp-action="DeleteAnimals" asp-controller="Zoo" method="post">
+    <input asp-for="AnimalId" />
+    <button type="submit">Delete Animal</button>
+</form>
