@@ -32,7 +32,8 @@ namespace Zoo_API.Controllers
                 {
                     UserName = request.UserName,
                     Password = request.Password,
-                    Email = request.Email
+                    Email = request.Email,
+                    Role = "User"
                 };
                 _context.Users.Add(user);
                 await _context.SaveChangesAsync();
@@ -61,11 +62,13 @@ namespace Zoo_API.Controllers
 
                 }
                 //jwt token generation
-                var token = _jwtservices.GenerateToken(user.UserName);
+                var token = _jwtservices.GenerateToken(user.UserName,user.Role);
                 Response.Cookies.Append("JwtToken", token, new CookieOptions
                 {
                     HttpOnly = true,
-                    Expires = DateTimeOffset.UtcNow.AddHours(2)
+                    Expires = DateTimeOffset.UtcNow.AddHours(2),
+                    Secure = false,
+                    SameSite = SameSiteMode.Lax
                 });
                 return RedirectToAction("Index", "Zoo");
             }
