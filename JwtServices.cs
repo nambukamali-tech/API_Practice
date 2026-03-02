@@ -13,7 +13,7 @@ namespace Zoo_API.Services
         }
 
         //Generating Token
-        public string GenerateToken(string username)
+        public string GenerateToken(string username , string role)
         {
             //create a key
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
@@ -24,6 +24,7 @@ namespace Zoo_API.Services
             var claims = new[]
             {
                 new Claim(ClaimTypes.Name , username),
+                new Claim(ClaimTypes.Role , role),
                 new Claim(JwtRegisteredClaimNames.Jti,
                 Guid.NewGuid().ToString())
             };
